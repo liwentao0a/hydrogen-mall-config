@@ -1,11 +1,8 @@
-spring:
-  profiles:
-    active: dev
 ---
 spring:
   profiles: dev
   application:
-    name: hmall-user-service
+    name: hmall-product-service
 
   datasource:
     password: root
@@ -31,7 +28,7 @@ spring:
     host: 118.178.194.239
 
 server:
-  port: 7001
+  port: 7011
 debug: false
 
 eureka:
@@ -47,6 +44,7 @@ eureka:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml
 
 #全局配置
 ribbon:

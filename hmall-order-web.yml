@@ -1,0 +1,44 @@
+---
+spring:
+  profiles: dev
+  application:
+    name: hmall-order-web
+
+server:
+  port: 8041
+debug: false
+
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://root:root@localhost:9001/eureka/
+
+ego-product-providert:
+  ribbon:
+    MaxAutoRetriesNextServer: 0
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+ego-product-provider:
+  ribbon:
+    ConnectTimeout: 3000
+    MaxAutoRetries: 2
+    ReadTimeout: 3000
+    OkToRetryOnAllOperations: true
+
+logging:
+  level:
+    root: info
+    
+info:
+  spring:
+    application:
+      name: ${spring.application.name}
+  server:
+    port: ${server.port}
