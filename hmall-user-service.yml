@@ -1,0 +1,75 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: hmall-user-service
+
+  datasource:
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///hydrogen_mall?serverTimezone=Asia/Shanghai
+    username: root
+
+  rabbitmq:
+    password: admin
+    port: 5672
+    host: 118.178.194.239
+    username: admin
+
+  redis:
+    password: root
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 500
+        min-idle: 0
+        max-active: 2000
+        max-wait: 3000ms
+    host: 118.178.194.239
+
+server:
+  port: 7001
+debug: false
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}aaaa
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://root:root@localhost:9001/eureka/
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+ego-product-providert:
+  ribbon:
+    MaxAutoRetriesNextServer: 0
+ego-product-provider:
+  ribbon:
+    ConnectTimeout: 3000
+    MaxAutoRetries: 2
+    ReadTimeout: 3000
+    OkToRetryOnAllOperations: true
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+
+logging:
+  level:
+    root: info
+
+mapper:
+  identity: MYSQL
+
+info:
+  spring:
+    application:
+      name: ${spring.application.name}
+  server:
+    port: ${server.port}
