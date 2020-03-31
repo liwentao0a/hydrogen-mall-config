@@ -19,7 +19,6 @@ eureka:
     service-url:
       defaultZone: http://root:root@localhost:9001/eureka/
 
-#全局配置
 ribbon:
   # 请求连接的超时时间 默认的时间为 1 秒
   ConnectTimeout: 10000
@@ -31,13 +30,7 @@ ribbon:
   MaxAutoRetries: 2
   # 对所有操作请求都进行重试
   OkToRetryOnAllOperations: true
-#局部配置
-#serviceName(服务名spring.application.name):
-#  ribbon:
-#    # 切换实例的重试次数
-#    MaxAutoRetriesNextServer: 0
 
-#全局配置
 feign:
   client:
     config:
@@ -46,14 +39,6 @@ feign:
         connectTimeout: 10000
         # 请求处理的超时时间
         readTimeout: 10000
-#局部配置
-#feign:
-#  client:
-#    config:
-#      serviceName(服务名spring.application.name):
-#        # 请求连接的超时时间 默认的时间为 1 秒
-#        connectTimeout: 5000
-
 
 logging:
   level:
