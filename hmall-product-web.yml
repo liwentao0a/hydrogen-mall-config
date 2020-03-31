@@ -25,22 +25,35 @@ ribbon:
   ConnectTimeout: 5000
   # 请求处理的超时时间
   ReadTimeout: 5000
-
+  # 切换实例的重试次数
+  MaxAutoRetriesNextServer: 0
+  # 对当前实例的重试次数
+  MaxAutoRetries: 2
+  # 对所有操作请求都进行重试
+  OkToRetryOnAllOperations: true
 #局部配置
-ego-product-providert:
-  ribbon:
-    # 切换实例的重试次数
-    MaxAutoRetriesNextServer: 0
-ego-product-provider:
-  ribbon:
-    # 请求连接的超时时间
-    ConnectTimeout: 3000
-    # 对当前实例的重试次数
-    MaxAutoRetries: 2
-    # 请求处理的超时时间
-    ReadTimeout: 3000
-    # 对所有操作请求都进行重试
-    OkToRetryOnAllOperations: true
+#serviceName(服务名spring.application.name):
+#  ribbon:
+#    # 切换实例的重试次数
+#    MaxAutoRetriesNextServer: 0
+
+#全局配置
+feign:
+  client:
+    config:
+      default:
+        # 请求连接的超时时间 默认的时间为 1 秒
+        connectTimeout: 5000
+        # 请求处理的超时时间
+        readTimeout: 5000
+#局部配置
+#feign:
+#  client:
+#    config:
+#      serviceName(服务名spring.application.name):
+#        # 请求连接的超时时间 默认的时间为 1 秒
+#        connectTimeout: 5000
+
 
 logging:
   level:
