@@ -22,9 +22,9 @@ eureka:
 #全局配置
 ribbon:
   # 请求连接的超时时间 默认的时间为 1 秒
-  ConnectTimeout: 5000
+  ConnectTimeout: 10000
   # 请求处理的超时时间
-  ReadTimeout: 5000
+  ReadTimeout: 10000
   # 切换实例的重试次数
   MaxAutoRetriesNextServer: 0
   # 对当前实例的重试次数
@@ -43,9 +43,9 @@ feign:
     config:
       default:
         # 请求连接的超时时间 默认的时间为 1 秒
-        connectTimeout: 5000
+        connectTimeout: 10000
         # 请求处理的超时时间
-        readTimeout: 5000
+        readTimeout: 10000
 #局部配置
 #feign:
 #  client:
