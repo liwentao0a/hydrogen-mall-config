@@ -31,3 +31,4 @@ mybatis:
 
 mapper:
   identity: MYSQL
+  mapper-locations: mybatis/mapper/*Mapper.xml
