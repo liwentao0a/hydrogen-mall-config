@@ -5,4 +5,4 @@ spring:
     name: hmall-order-web
 
 server:
-  port: 8041
+  port: 8031

@@ -5,4 +5,4 @@ spring:
   profiles: dev
 
 server:
-  port: 8031
+  port: 8021

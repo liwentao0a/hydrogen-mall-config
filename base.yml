@@ -38,6 +38,8 @@ feign:
         connectTimeout: 10000
         # 请求处理的超时时间
         readTimeout: 10000
+  hystrix:
+    enabled: true
 
 info:
   spring:

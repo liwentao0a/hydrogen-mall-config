@@ -5,4 +5,4 @@ spring:
     name: hmall-passport-web
 
 server:
-  port: 8011
+  port: 8000
