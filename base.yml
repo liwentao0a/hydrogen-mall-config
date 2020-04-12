@@ -41,6 +41,15 @@ feign:
   hystrix:
     enabled: true
 
+#与feign一起使用时以feign的超时设置为准
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
 info:
   spring:
     application:
